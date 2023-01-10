@@ -25,18 +25,24 @@ class HomePageBody extends StatefulWidget {
 class _HomePageBodyState extends State<HomePageBody> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        OutlinedButton(
-          onPressed: showAlertDialog,
-          child: const Text("AlertDialog"),
-        ),
-        OutlinedButton(
-          onPressed: showCupertinoDialog,
-          child: const Text("CupertinoDialog"),
-        )
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          OutlinedButton(
+            onPressed: showAlertDialog,
+            child: const Text("AlertDialog"),
+          ),
+          const SizedBox(
+            height: 40.0,
+          ),
+          OutlinedButton(
+            onPressed: showCupertinoDialog,
+            child: const Text("CupertinoDialog"),
+          )
+        ],
+      ),
     );
   }
 
@@ -68,7 +74,9 @@ class _HomePageBodyState extends State<HomePageBody> {
         content: const Text("This is main body"),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             child: const Text("Ok"),
           ),
           TextButton(
